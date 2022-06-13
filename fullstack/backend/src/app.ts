@@ -1,6 +1,7 @@
 import express, {request, response} from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import routes from './routes/routes';
 
 const app = express();
 const PORT = 8080;
@@ -17,13 +18,7 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.get('/about', (req, res) => {
-    res.send("ini about");
-})
+app.use(routes);
 
 mongoose.set('useFindAndModify', true);
 

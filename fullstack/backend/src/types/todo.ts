@@ -1,6 +1,6 @@
-import { Document } from "mongoose";
+import { Document } from 'mongoose';
 
 export interface Todo extends Document {
-    title: string,
-    status: 'completed' | 'uncompleted'
-};
+  title: string;
+  status: 'completed' | 'uncompleted';
+}
